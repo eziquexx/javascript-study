@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #wrap { position: fixed; }
+    body { height: 3000px; }
+  </style>
+
+  <script>
+    document.onmousemove = function(e) {
+      let x = e.clientX; // x좌표 구하기
+      let y = e.clientY; // y좌표 구하기
+      document.getElementById("m1").innerHTML = x;
+      document.getElementById("m2").innerHTML = y;
+
+    }
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <h1 id="m1">0000</h1>
+    <h1 id="m2">0000</h1>
+  </div>
+</body>
+</html>
