@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array2</title>
+</head>
+<body>
+  <script>
+    let arr_1 = ["사당", "교대", "방배", "강남"];
+    let arr_2 = ["신사", "압구정", "옥수"];
+
+    // '-' 문자를 연결하여 하나의 문자열을 반환
+    let result = arr_1.join("-");
+    document.write(result, "<br>");
+    
+
+    // 2개의 배열을 하나로 합침
+    let result1 = arr_1.concat(arr_2);
+    document.write(result1, "<br>");
+
+
+  // 인덱스 번호 1번부터 3번 이전까지
+  let result2 = arr_1.slice(1, 3);
+  document.write(result2, "<br>"); // 교대, 방배 출력
+
+  // 순차적으로
+  arr_1.sort();
+  document.write(arr_1, "<br>");
+  
+  // 순차적 반대로
+  arr_1.reverse();
+  document.write(arr_1, "<br>");
+
+  </script>
+</body>
+</html>

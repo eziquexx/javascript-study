@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array1</title>
+</head>
+<body>
+  <script>
+    let arr = [30, "따르릉", true];
+
+    document.write("<h3>배열값 가져오기-1</h3>");
+    document.write(arr[0], "<br>");
+    document.write(arr[1], "<br>");
+    document.write(arr[2], "<br>");
+
+
+    document.write("<h3>배열값 가져오기-2</h3>");
+    for(let i = 0; i < arr.length; i++) {
+      document.write(arr[i], "<br>");
+    }
+
+
+    document.write("<h3>배열값 가져오기-3 for in</h3>");
+    for(i in arr) {
+      document.write(arr[i], "<br>");
+    }
+
+
+    document.write("<h3>배열값 가져오기-4 for each - 일반 함수</h3>");
+    arr.forEach(function(element) {
+      document.write(element, "<br>");
+    });
+
+
+    document.write("<h3>배열값 가져오기-5 for each - 화살표 함수</h3>");
+    arr.forEach( element => {
+      document.write(element, "<br>");
+    });
+    
+    </script>
+</body>
+</html>
