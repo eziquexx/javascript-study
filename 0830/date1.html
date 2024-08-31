@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function(){ //html 과 css를 다읽은 후에 실행
+      autoTime();
+      setInterval(autoTime, 1000);
+    
+    function autoTime(){
+      var today = new Date();
+      //alert(today);
+      var y = today.getFullYear();//연도 추출
+      var m = today.getMonth()+1;  //
+      //alert(m);
+      var d = today.getDate();
+      var n = today.getDay();//요일  일(0) 월(1) 화(2) 금(5) 
+      //alert(n);
+      var yoil; 
+      if(n == '0'){
+        yoil = '일';
+      }else if(n == '1'){
+        yoil = '월';
+      }else if(n == '2'){
+        yoil = '화';
+      }else if(n == '3'){
+        yoil = '수';
+      }else if(n == '4'){
+        yoil = '목';
+      }else if(n == '5'){
+        yoil = '금';
+      }else if(n == '6'){
+        yoil = '토';
+      }
+      //alert(yoil);
+
+      var h = today.getHours();
+      var ml = today.getMinutes();
+      var s = today.getSeconds();
+
+    // document.write(y + "년 " + m + "월 " + d+ "일 " + yoil + "요일 "+ h + "시 " + ml + "분 "+ s + "초" );
+
+    document.getElementById('year').innerHTML = y; 
+    document.querySelector('#month').innerHTML = m;
+      document.querySelector('#date').innerHTML = d;
+      document.querySelector('#nday').innerHTML = yoil;
+      document.querySelector('#hour').innerHTML = h;
+      document.querySelector('#minute').innerHTML = ml;
+      document.querySelector('#second').innerHTML = s;
+
+    }
+
+  } 
+  </script>
+</head>
+<body>
+  <h1>
+      <span id="year">0000</span>년
+      <span id="month">00</span>월
+      <span id="date">00</span>일
+      <span id="nday">0</span>요일
+      <span id="hour">00</span>시
+      <span id="minute">00</span>분
+      <span id="second">00</span>초
+  </h1>
+</body>
+</html>
