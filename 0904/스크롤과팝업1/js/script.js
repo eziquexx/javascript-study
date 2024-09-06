@@ -82,6 +82,47 @@ $(function(){
  
  });
  
+//  $("section > div").mousewheel(function(event, d){
+//   console.log(d);
+
+//   if(d > 0) {
+//     let prev = $(this).prev().offset().top;
+//     $('html, body').stop().animate({scrollTop:prev},1000);
+//   }
+//   if(d < 0) {
+//     let next = $(this).next().offset().top;
+//     $('html, body').stop().animate({scrollTop:next},1000);
+//   }
+//  });
  
- 
- });
+
+$("#popup").draggable();
+
+// 기본적으로 처음에는 $.cookie("pop") no가 없으므로
+// #popup을 보여준다.
+if($.cookie('pop')!="no"){
+  $('#popup').show();
+}
+$("#popup area:eq(0)").click(function(){
+  $("#popup").fadeOut("fast");
+});
+$("#popup area:eq(1)").click(function(){
+  //하루동안 보지 않게
+  $.cookie("pop", "no", {expires:1});
+  $("#popup").fadeOut("fast");
+});
+
+if($.cookie("popup") == "none" ) {
+  $("#notice_wrap").hide();
+}
+let chk = $("#expiresChk"); // checkbox
+$(".closeBtn").on("click", closePop);
+function closePop() {
+  if(chk.is(":checked")) { // input창이 checked가 되어있으면
+    $.cookie('popup', "none", {expires:3});
+  }
+  $("#notice_wrap").fadeOut("fast");
+}
+
+
+});
